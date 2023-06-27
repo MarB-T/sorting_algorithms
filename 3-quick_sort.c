@@ -6,7 +6,7 @@
  * @b: second int
  * Return: nothing
  */
-void swap(int* a, int* b)
+void swap(int *a, int *b)
 {
 	int temp = *a;
 	*a = *b;
@@ -61,7 +61,7 @@ void sort(int *array, int low, int high, size_t size)
 	if (low < high)
 	{
 		pivot_indx = partition(array, low, high, size);
-		sort(array, low, pivot_indx -1, size);
+		sort(array, low, pivot_indx - 1, size);
 		sort(array, pivot_indx + 1, high, size);
 	}
 }
