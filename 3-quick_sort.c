@@ -42,7 +42,10 @@ int partition(int *array, int low, int high, size_t size)
 		j++;
 	}
 	if (pivot < array[i + 1])
+	{
 		swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
 	return (1 + i);
 }
 
