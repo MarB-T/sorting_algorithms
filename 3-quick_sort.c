@@ -31,7 +31,6 @@ int partition(int *array, size_t size)
 		{
 			swap(&array[j], &array[i]);
 			i++;
-			print_array(array, size);
 		}
 	}
 	swap(&array[i], &array[size - 1]);
