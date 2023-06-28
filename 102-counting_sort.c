@@ -13,7 +13,6 @@ void counting_sort(int *array, size_t size)
 
 	if (array == NULL || size <= 1)
 		return;
-
 	while (i < size)
 	{
 		if (array[i] > (int)max)
@@ -30,19 +29,14 @@ void counting_sort(int *array, size_t size)
 		free(counting);
 		return;
 	}
-
 	for (i = 0; i < size; i++)
 		copy[i] = array[i];
-
 	for (i = 0; i < max; i++)
 		counting[i] = 0;
-
 	for (i = 0; i < size; i++)
 		counting[array[i]]++;
-
 	for (i = 1; i < max; i++)
 		counting[i] += counting[i - 1];
-
 	print_array(counting, max);
 	for (i = 0; i < size; i++)
 	{
