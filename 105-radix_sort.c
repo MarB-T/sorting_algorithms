@@ -47,6 +47,26 @@ void counting_sort_(int *array, size_t size, int pos)
 }
 
 /**
+ * is_sorted - checks if an array is already sorted
+ * @array: the array in question
+ * @size: size of array
+ * Return: 1 if sorted 0 if not
+ */
+int is_sorted(int *array, size_t size)
+{
+	size_t i;
+
+	for (i = 0; i < size - 1; i++)
+	{
+		if (array[i] > array[i + 1])
+			return (0);
+	}
+
+	return (1);
+}
+
+
+/**
  * radix_sort - sorts an array of integers using radix sort
  * @array: the array to be sorted
  * @size: size of array
@@ -56,7 +76,9 @@ void radix_sort(int *array, size_t size)
 {
 	int pos, max;
 
-	if (array == NULL || size <= 1)
+	if (array == NULL || size == 1 || size == 0)
+		return;
+	if (is_sorted(array, size))
 		return;
 	max = get_max(array, size);
 	for (pos = 1; (max / pos) > 0; pos *= 10)
