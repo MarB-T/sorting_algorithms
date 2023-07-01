@@ -56,6 +56,8 @@ void radix_sort(int *array, size_t size)
 {
 	int pos, max;
 
+	if (array == NULL || size <= 1)
+		return;
 	max = get_max(array, size);
 	for (pos = 1; (max / pos) > 0; pos *= 10)
 	{
